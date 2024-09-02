@@ -1,4 +1,17 @@
-const page1 = {
+type Details = {
+  createAt: Date;
+  updateAt: Date;
+};
+
+type Pages = {
+  title: string;
+  likes: number;
+  accounts: string[];
+  status: "open" | "close";
+  details?: Details;
+};
+
+const page1: Pages = {
   title: "The awesome page",
   likes: 100,
   accounts: ["Max", "Anton", "Nikita"],
@@ -9,7 +22,7 @@ const page1 = {
   },
 };
 
-const page2 = {
+const page2: Pages = {
   title: "Python or Js",
   likes: 5,
   accounts: ["Alex"],
