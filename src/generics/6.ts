@@ -1,22 +1,16 @@
-interface User {
-  name: string;
-  age: number;
-  email: string;
-  address?: { city: string; country: string };
-}
-
-const mango: User = {
-  name: "Mango",
-  age: 30,
-  email: "john@example.com",
-  address: {
-    city: "New York",
-    country: "USA",
-  },
+type Errors = {
+  email?: string[];
+  firstName?: string[];
+  lastName?: string[];
+  phone?: string[];
 };
 
-const poly: User = {
-  name: "Mango",
-  age: 30,
-  email: "john@example.com",
+type Form = {
+  email: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  phone: string | null;
+  errors: Errors;
 };
+
+type Params = Omit<Form, "errors">;

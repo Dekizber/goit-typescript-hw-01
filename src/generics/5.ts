@@ -1,13 +1,13 @@
-enum DayOfWeek {
-  Monday,
-  Tuesday,
-  Wednesday,
-  Thursday,
-  Friday,
-  Saturday,
-  Sunday,
+export enum UserRole {
+  admin = "admin",
+  editor = "editor",
+  guest = "guest",
 }
 
-const isWeekend = (day: DayOfWeek): boolean => {
-  return day === DayOfWeek.Saturday || day === DayOfWeek.Sunday;
+type userRoles = Record<UserRole, string>;
+
+const RoleDescription: userRoles = {
+  admin: "Admin User",
+  editor: "Editor User",
+  guest: "Guest User",
 };
